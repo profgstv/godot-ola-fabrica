@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://m6apbd88nv58"]
 
 [node name="FirstSteps" type="Node2D" unique_id=1194654768]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=598933678]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.77824694, 0.95989484, 0.9922914, 1)
