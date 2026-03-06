@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bs0o1hsjl06og"]
+
+[ext_resource type="Theme" uid="uid://bk6khxlrgd8b3" path="res://assets/themes/title-screen.tres" id="1_iqqu3"]
+[ext_resource type="Script" uid="uid://c0vnkdaid0tu4" path="res://scripts/title_screen.gd" id="2_vpwcr"]
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_iqqu3"]
+
+[node name="TitleScreen" type="Control" unique_id=1704711972]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iqqu3")
+script = ExtResource("2_vpwcr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1927408736]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.27356932, 0.360016, 0.7202103, 1)
+
+[node name="OlaMundo" type="Label" parent="." unique_id=688912592]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 58.0
+offset_right = 1227.0
+offset_bottom = 187.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("1_iqqu3")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Olá Mundo!"
+horizontal_alignment = 1
+language = "pt_BR"
+
+[node name="EstamosNaFabrica" type="RichTextLabel" parent="." unique_id=468513817]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 203.0
+offset_right = 1382.0
+offset_bottom = 341.0
+theme = ExtResource("1_iqqu3")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "Estamos na Fábrica de Cultura 4.0
+de São Bernardo do Campo/SP"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="MenuPrincipal" type="Panel" parent="." unique_id=695075880]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 396.0
+offset_right = 1235.0
+offset_bottom = 946.0
+theme = ExtResource("1_iqqu3")
+
+[node name="Começar" type="Button" parent="MenuPrincipal" unique_id=1292592834]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 83.0
+offset_right = 500.0
+offset_bottom = 233.0
+focus_neighbor_top = NodePath("../Sair")
+theme = ExtResource("1_iqqu3")
+text = "Começar
+"
+
+[node name="Sair" type="Button" parent="MenuPrincipal" unique_id=200378280]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 316.0
+offset_right = 400.0
+offset_bottom = 466.0
+focus_neighbor_bottom = NodePath("../Começar")
+theme = ExtResource("1_iqqu3")
+text = "Sair"
+
+[node name="PorProfgstv" type="Label" parent="." unique_id=160243786]
+layout_mode = 0
+offset_left = 682.0
+offset_top = 1000.0
+offset_right = 1238.0
+offset_bottom = 1040.0
+theme = ExtResource("1_iqqu3")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Um jogo feito por profgstv no ateliê de games"
+vertical_alignment = 2
+language = "pt_BR"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=896476964]
+position = Vector2(1807, 990)
+texture = ExtResource("4_iqqu3")
+
+[connection signal="pressed" from="MenuPrincipal/Começar" to="." method="_on_começar_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Começar" to="MenuPrincipal" method="_on_começar_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MenuPrincipal/Sair" to="MenuPrincipal" method="_on_sair_pressed"]

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bk6khxlrgd8b3"]
+
+[ext_resource type="FontFile" uid="uid://bslw8s5ljby50" path="res://assets/fonts/Jersey25-Regular.ttf" id="1_4hita"]
+
+[resource]
+default_font = ExtResource("1_4hita")
+default_font_size = 128
