@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ckgbw78o522k"]
+
+[ext_resource type="Texture2D" uid="uid://eu4t4gut1sd0" path="res://assets/tiles/fcsbc-objetos.png" id="1_8ifsf"]
+
+[node name="Objetos" type="Node2D" unique_id=741986957]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=536323095]
+texture = ExtResource("1_8ifsf")
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="CollisionBody" type="StaticBody2D" parent="." unique_id=124807652]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="CollisionBody" unique_id=1767000043]

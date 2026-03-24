@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bmgckait0vk7u"]
+
+[ext_resource type="PackedScene" uid="uid://ckgbw78o522k" path="res://scenes/templates/objetos.tscn" id="1_8fcv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkl0o"]
+size = Vector2(5, 16)
+
+[node name="Pole" unique_id=741986957 instance=ExtResource("1_8fcv6")]
+
+[node name="Sprite" parent="." index="0" unique_id=536323095]
+position = Vector2(0, -48)
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 192)
+
+[node name="CollisionBody" parent="." index="1" unique_id=124807652]
+position = Vector2(0, -48)
+
+[node name="CollisionShape" parent="CollisionBody" index="0" unique_id=1767000043]
+position = Vector2(0.5, 77)
+shape = SubResource("RectangleShape2D_nkl0o")

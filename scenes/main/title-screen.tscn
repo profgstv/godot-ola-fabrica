@@ -1,0 +1,393 @@
+[gd_scene format=3 uid="uid://bs0o1hsjl06og"]
+
+[ext_resource type="Theme" uid="uid://bk6khxlrgd8b3" path="res://assets/themes/title-screen.tres" id="1_iqqu3"]
+[ext_resource type="Script" uid="uid://c0vnkdaid0tu4" path="res://scripts/title_screen.gd" id="2_vpwcr"]
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_iqqu3"]
+
+[sub_resource type="Animation" id="Animation_vpwcr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AperteBotãoPanel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuPrincipal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuPrincipal:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AperteBotãoPanel:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AperteBotãoPanel/AperteBotãoLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AperteBotãoPanel/AperteBotãoLabel:visible_characters_behavior")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_iqqu3"]
+resource_name = "press_button_animation"
+length = 2.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AperteBotãoPanel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuPrincipal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuPrincipal:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AperteBotãoPanel:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AperteBotãoPanel/AperteBotãoLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AperteBotãoPanel/AperteBotãoLabel:visible_characters_behavior")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_xbjre"]
+resource_name = "turn_to_menu_panel_animation"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AperteBotãoPanel/AperteBotãoLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AperteBotãoPanel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AperteBotãoPanel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuPrincipal:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MenuPrincipal:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbjre"]
+_data = {
+&"RESET": SubResource("Animation_vpwcr"),
+&"press_button_animation": SubResource("Animation_iqqu3"),
+&"turn_to_menu_panel_animation": SubResource("Animation_xbjre")
+}
+
+[node name="TitleScreen" type="Control" unique_id=1704711972]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iqqu3")
+script = ExtResource("2_vpwcr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1927408736]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.27356932, 0.360016, 0.7202103, 1)
+
+[node name="OlaMundo" type="Label" parent="." unique_id=688912592]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 58.0
+offset_right = 1227.0
+offset_bottom = 187.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("1_iqqu3")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Olá Mundo!"
+horizontal_alignment = 1
+language = "pt_BR"
+
+[node name="EstamosNaFabrica" type="Label" parent="." unique_id=949112297]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 203.0
+offset_right = 1374.0
+offset_bottom = 336.0
+theme = ExtResource("1_iqqu3")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Estamos na Fábrica de Cultura 4.0
+de São Bernardo do Campo/SP"
+horizontal_alignment = 1
+
+[node name="PanelControl" type="Control" parent="." unique_id=877026803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AperteBotãoPanel" type="Panel" parent="PanelControl" unique_id=1557775552]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.592
+anchor_right = 0.5
+anchor_bottom = 0.592
+offset_left = -587.5
+offset_top = -111.359985
+offset_right = 587.5
+offset_bottom = 110.640015
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(587, 80)
+
+[node name="AperteBotãoLabel" type="Label" parent="PanelControl/AperteBotãoPanel" unique_id=805321160]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.5
+offset_top = -104.0
+offset_right = 546.5
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iqqu3")
+theme_override_font_sizes/font_size = 96
+text = "Aperte Qualquer Botão ou Toque na Tela"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+visible_characters_behavior = 3
+
+[node name="MenuPrincipal" type="Panel" parent="PanelControl" unique_id=695075880]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35700002
+anchor_top = 0.367
+anchor_right = 0.643
+anchor_bottom = 0.87600005
+offset_left = -0.44006348
+offset_top = -0.36001587
+offset_right = 0.4399414
+offset_bottom = -0.080078125
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(275, 275)
+theme = ExtResource("1_iqqu3")
+
+[node name="Começar" type="Button" parent="PanelControl/MenuPrincipal" unique_id=1292592834]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 83.0
+offset_right = 500.0
+offset_bottom = 233.0
+focus_neighbor_top = NodePath("../Sair")
+theme = ExtResource("1_iqqu3")
+text = "Começar
+"
+
+[node name="Sair" type="Button" parent="PanelControl/MenuPrincipal" unique_id=200378280]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 316.0
+offset_right = 400.0
+offset_bottom = 466.0
+focus_neighbor_bottom = NodePath("../Começar")
+theme = ExtResource("1_iqqu3")
+text = "Sair"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelControl" unique_id=1982634224]
+libraries/ = SubResource("AnimationLibrary_xbjre")
+autoplay = &"press_button_animation"
+
+[node name="PorProfgstv" type="Label" parent="." unique_id=160243786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.94200003
+anchor_right = 0.5
+anchor_bottom = 0.94200003
+offset_left = -407.0
+offset_top = -24.360046
+offset_right = 408.0
+offset_bottom = 23.639954
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(407.5, 24)
+theme = ExtResource("1_iqqu3")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "Um jogo feito por profgstv no ateliê de games"
+vertical_alignment = 2
+language = "pt_BR"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=896476964]
+position = Vector2(1807, 990)
+texture = ExtResource("4_iqqu3")
+
+[connection signal="pressed" from="PanelControl/MenuPrincipal/Começar" to="." method="_on_começar_pressed"]
+[connection signal="pressed" from="PanelControl/MenuPrincipal/Começar" to="PanelControl/MenuPrincipal" method="_on_começar_pressed"]
+[connection signal="pressed" from="PanelControl/MenuPrincipal/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="PanelControl/MenuPrincipal/Sair" to="PanelControl/MenuPrincipal" method="_on_sair_pressed"]
+[connection signal="animation_finished" from="PanelControl/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
