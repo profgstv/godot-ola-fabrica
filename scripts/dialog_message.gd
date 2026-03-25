@@ -13,6 +13,7 @@ var btn_1_msg: String
 var btn_1_func: Callable
 var dialog_ended: bool = false
 
+const SPEED = 2.0
 
 func kill_dialog() -> void:
 	player.set_physics_process(true)
@@ -36,7 +37,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	var speed: float
 	if anim_name == "panel_display":
 		animation_player.play("dialog_message")
-		speed = 7.0/label.get_line_count()
+		speed = SPEED/label.get_line_count()
 		animation_player.speed_scale = speed
 	elif anim_name == "dialog_message":
 		dialog_ended = true
