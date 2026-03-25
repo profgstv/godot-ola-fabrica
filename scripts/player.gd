@@ -6,15 +6,30 @@ const SPEED = 300.0
 
 var sprite_direction: String = "down"
 
+var stop_movement: bool = false
+
 func sprite_animation(dir: String, mov: String) -> void:
 	sprite_direction = dir
 	sprites.play(mov + "_" + dir)
 	
 func movement() -> void:
-	var direction := Vector2(
-		Input.get_axis("ui_left", "ui_right"),
-		Input.get_axis("ui_up", "ui_down")
-	)
+	var direction: Vector2
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		stop_movement = false
+		direction = Vector2(
+			Input.get_axis("ui_left", "ui_right"),
+			Input.get_axis("ui_up", "ui_down")
+		)
+	elif stop_movement == false:
+		direction = get_global_mouse_position() - global_position
+		print(direction.length())
+		if direction.length() <= 5.0:
+			global_position = get_global_mouse_position()
+			stop_movement = true
+		else:
+			stop_movement = false
+	else:
+		direction = Vector2.ZERO
 	
 	velocity = direction.normalized() * SPEED
 
