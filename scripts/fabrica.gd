@@ -13,7 +13,7 @@ func instance_dialog(message: String, btn_0_msg: String, btn_1_msg: String, btn_
 	call_deferred("add_child", dialog)
 
 func _ready() -> void:
-	instance_dialog("E aí, tudo bem? \n\nBora conhecer meu mundo na Fabrica de Cultura 4.0 de São Bernardo do Campo/SP?\nPara sair do jogo basta ir até um dos portões.\nSe quiser conhecer mais é só entrar na fábrica, ok?\nObrigado!", "Ok", "", func(): pass)
+	instance_dialog("E aí, tudo bem? \n\nBora conhecer a Fabrica de Cultura 4.0 de São Bernardo do Campo/SP?\nPara sair do jogo basta ir até um dos portões.\nSe quiser conhecer mais é só entrar na fábrica, ok?\nObrigado!", "Ok", "", func(): pass)
 
 func _on_exit_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

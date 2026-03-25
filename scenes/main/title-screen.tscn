@@ -2,7 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://bk6khxlrgd8b3" path="res://assets/themes/title-screen.tres" id="1_iqqu3"]
 [ext_resource type="Script" uid="uid://c0vnkdaid0tu4" path="res://scripts/title_screen.gd" id="2_vpwcr"]
-[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="4_iqqu3"]
 
 [sub_resource type="Animation" id="Animation_vpwcr"]
 length = 0.001
@@ -229,6 +228,7 @@ _data = {
 }
 
 [node name="TitleScreen" type="Control" unique_id=1704711972]
+texture_filter = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -242,9 +242,9 @@ script = ExtResource("2_vpwcr")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.27356932, 0.360016, 0.7202103, 1)
+color = Color(0.15293568, 0.24589112, 1, 1)
 
-[node name="OlaMundo" type="Label" parent="." unique_id=688912592]
+[node name="Title" type="Label" parent="." unique_id=688912592]
 layout_mode = 0
 offset_left = 693.0
 offset_top = 58.0
@@ -259,7 +259,7 @@ text = "Olá Mundo!"
 horizontal_alignment = 1
 language = "pt_BR"
 
-[node name="EstamosNaFabrica" type="Label" parent="." unique_id=949112297]
+[node name="Subtitle" type="Label" parent="." unique_id=949112297]
 layout_mode = 0
 offset_left = 538.0
 offset_top = 203.0
@@ -381,10 +381,6 @@ theme_override_font_sizes/font_size = 47
 text = "Um jogo feito por profgstv no ateliê de games"
 vertical_alignment = 2
 language = "pt_BR"
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=896476964]
-position = Vector2(1807, 990)
-texture = ExtResource("4_iqqu3")
 
 [connection signal="pressed" from="PanelControl/MenuPrincipal/Começar" to="." method="_on_começar_pressed"]
 [connection signal="pressed" from="PanelControl/MenuPrincipal/Começar" to="PanelControl/MenuPrincipal" method="_on_começar_pressed"]

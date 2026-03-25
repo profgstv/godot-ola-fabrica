@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gwai"]
 size = Vector2(128, 43)
 
-[node name="LittleHouse" unique_id=741986957 instance=ExtResource("1_htpcq")]
+[node name="Guardhouse" unique_id=741986957 instance=ExtResource("1_htpcq")]
 
 [node name="Sprite" parent="." index="0" unique_id=536323095]
 position = Vector2(0, -21)

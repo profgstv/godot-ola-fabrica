@@ -42,10 +42,10 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_docrq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5y8cn"]
-size = Vector2(512, 1408)
+size = Vector2(512, 1212)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibsyf"]
-size = Vector2(64, 36)
+size = Vector2(64, 97)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f6ovc"]
 radius = 31.0
@@ -64,11 +64,11 @@ texture = ExtResource("2_46ibs")
 [node name="Colisores" type="StaticBody2D" parent="." unique_id=1293538791]
 
 [node name="Prédio" type="CollisionShape2D" parent="Colisores" unique_id=164213956]
-position = Vector2(-128, -648)
+position = Vector2(-128, -550)
 shape = SubResource("RectangleShape2D_5y8cn")
 
 [node name="Escada" type="CollisionShape2D" parent="Colisores" unique_id=528125830]
-position = Vector2(-416, -1334)
+position = Vector2(-416, -1303.5)
 shape = SubResource("RectangleShape2D_ibsyf")
 
 [node name="Coluna1" type="CollisionShape2D" parent="Colisores" unique_id=2129432920]

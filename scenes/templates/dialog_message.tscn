@@ -185,6 +185,8 @@ pivot_offset = Vector2(572.5, 180)
 text = "Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto "
 autowrap_mode = 3
 clip_text = true
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Button0" type="Button" parent="Panel" unique_id=495752059]
 visible = false

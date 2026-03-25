@@ -11,7 +11,12 @@ var message: String
 var btn_0_msg: String
 var btn_1_msg: String
 var btn_1_func: Callable
-var mobile_mode: bool
+var dialog_ended: bool = false
+
+
+func kill_dialog() -> void:
+	player.set_physics_process(true)
+	queue_free()
 
 func _ready() -> void:
 	player.sprite_animation(player.sprite_direction, "idle")
@@ -21,6 +26,12 @@ func _ready() -> void:
 	button_1.text = btn_1_msg
 	animation_player.play("panel_display")
 
+func _process(_delta: float) -> void:
+	if Input.is_anything_pressed() and animation_player.current_animation == "dialog_message":
+		animation_player.advance(4.5)
+	elif Input.is_action_pressed("ui_close_dialog") and dialog_ended:
+		kill_dialog()
+
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	var speed: float
 	if anim_name == "panel_display":
@@ -28,6 +39,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		speed = 7.0/label.get_line_count()
 		animation_player.speed_scale = speed
 	elif anim_name == "dialog_message":
+		dialog_ended = true
 		if btn_1_msg == "":
 			button_0.position.x = 393.098
 			button_1.visible = false
@@ -37,8 +49,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		button_0.grab_focus()
 
 func _on_button_0_pressed() -> void:
-	player.set_physics_process(true)
-	queue_free()
+	kill_dialog()
 
 func _on_button_1_pressed() -> void:
 	btn_1_func.call()
