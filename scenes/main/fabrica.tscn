@@ -8,22 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bmgckait0vk7u" path="res://scenes/templates/pole.tscn" id="5_18x8l"]
 [ext_resource type="PackedScene" uid="uid://dok4evaquleoh" path="res://scenes/templates/little_house.tscn" id="6_6icwq"]
 [ext_resource type="PackedScene" uid="uid://b0ho1h8iiy4o5" path="res://scenes/templates/player.tscn" id="7_m10dr"]
-[ext_resource type="FontFile" uid="uid://bslw8s5ljby50" path="res://assets/fonts/Jersey25-Regular.ttf" id="9_tf141"]
-[ext_resource type="Texture2D" uid="uid://c17gsct128574" path="res://assets/buttons/checked.tres" id="10_18x8l"]
-[ext_resource type="Texture2D" uid="uid://cbyfrm6doothi" path="res://assets/buttons/uncheked.tres" id="11_6icwq"]
-[ext_resource type="Script" uid="uid://o4en42hevc7o" path="res://addons/touch_screen_joystick/touch_screen_joystick.gd" id="12_6icwq"]
-[ext_resource type="Texture2D" uid="uid://odn5ucwjei5m" path="res://assets/buttons/checked_disabled.tres" id="12_xt4sl"]
-[ext_resource type="Texture2D" uid="uid://sq0cchwcrc1" path="res://assets/buttons/uncheked_disabled.tres" id="13_l2rv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iplji"]
 size = Vector2(190, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf141"]
 size = Vector2(104, 30)
-
-[sub_resource type="Theme" id="Theme_wclp7"]
-default_font = ExtResource("9_tf141")
-default_font_size = 64
 
 [node name="Fabrica" type="Node2D" unique_id=1798954981]
 y_sort_enabled = true
@@ -160,36 +150,5 @@ shape = SubResource("RectangleShape2D_iplji")
 position = Vector2(961, 1815)
 shape = SubResource("RectangleShape2D_tf141")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1176174276]
-
-[node name="CheckButton" type="CheckButton" parent="CanvasLayer" unique_id=1795988343]
-texture_filter = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -495.0
-offset_bottom = 88.0
-grow_horizontal = 0
-theme = SubResource("Theme_wclp7")
-theme_override_icons/checked = ExtResource("10_18x8l")
-theme_override_icons/unchecked = ExtResource("11_6icwq")
-theme_override_icons/checked_disabled = ExtResource("12_xt4sl")
-theme_override_icons/unchecked_disabled = ExtResource("13_l2rv7")
-text = "Modo Celular"
-
-[node name="TouchScreenJoystick" type="Control" parent="CanvasLayer" unique_id=597284623]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 243.0
-offset_top = 818.0
-offset_right = 283.0
-offset_bottom = 858.0
-script = ExtResource("12_6icwq")
-base_radius = 200.0
-knob_radius = 80.0
-use_input_actions = true
-metadata/_custom_type_script = "uid://o4en42hevc7o"
-
 [connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
 [connection signal="body_entered" from="EnterFabricaArea" to="." method="_on_enter_fabrica_area_body_entered"]
-[connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="_on_check_button_toggled"]

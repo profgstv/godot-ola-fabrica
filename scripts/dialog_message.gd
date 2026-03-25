@@ -14,9 +14,6 @@ var btn_1_func: Callable
 var mobile_mode: bool
 
 func _ready() -> void:
-	parent.check_button.disabled = true
-	mobile_mode = parent.touch_screen_joystick.visible
-	parent.touch_screen_joystick.visible = false
 	player.sprite_animation(player.sprite_direction, "idle")
 	player.set_physics_process(false)
 	label.text = message
@@ -42,8 +39,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_button_0_pressed() -> void:
 	player.set_physics_process(true)
 	queue_free()
-	parent.check_button.disabled = false
-	parent.touch_screen_joystick.visible = mobile_mode 
 
 func _on_button_1_pressed() -> void:
 	btn_1_func.call()
