@@ -18,7 +18,11 @@ func _ready() -> void:
 
 func _on_exit_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		instance_dialog("Você está saindo para a tela inicial do jogo, ok?", 3.5, "Cancelar", "Ok", func(): 
+		instance_dialog(
+			"Você está saindo para a tela inicial do jogo, ok?", 3.5, 
+			"Cancelar", 
+			"Ok", 
+			func(): 
 			get_tree().change_scene_to_file("res://scenes/main/title-screen.tscn")
 			pass
 			)

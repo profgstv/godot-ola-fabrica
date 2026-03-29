@@ -24,6 +24,7 @@ script = ExtResource("1_iplji")
 position = Vector2(962, 2354)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=866253774]
+zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
 limit_right = 3200
