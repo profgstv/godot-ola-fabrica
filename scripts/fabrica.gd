@@ -4,7 +4,7 @@ extends Node2D
 @onready var fabrica: Node2D = $"."
 
 func dialog(message: String, speed: float, btn_0_msg: String, ...extra: Array) -> void:
-	var buttons: Array 
+	var buttons: Array[Global.DialogButton] 
 	Global.dialog_button_0.message = btn_0_msg
 	if extra.size() >= 3:
 		Global.dialog_button_0.function = extra[extra.size() - 1]

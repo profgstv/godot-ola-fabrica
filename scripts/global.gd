@@ -11,7 +11,7 @@ class DialogButton:
 	var message: String
 	var function: Callable
 
-func instance_dialog(root_node, message: String, speed: float, init: Callable, buttons: Array) -> void:
+func instance_dialog(root_node, message: String, speed: float, init: Callable, buttons: Array[DialogButton]) -> void:
 	dialog = DIALOG_MESSAGE.instantiate()
 	dialog.init = init
 	dialog.message = message
