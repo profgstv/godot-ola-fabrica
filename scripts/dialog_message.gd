@@ -1,30 +1,24 @@
 extends CanvasLayer
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var button_0: Button = $Panel/Button0
-@onready var button_1: Button = $Panel/Button1
+@onready var dialog_buttons: Array = [$Panel/Button0, $Panel/Button1]
 @onready var label: Label = $Panel/Label
-@onready var player: CharacterBody2D = get_parent().player
-@onready var parent = get_parent()
 
-var message: String
-var btn_0_msg: String
-var btn_1_msg: String
-var btn_1_func: Callable
 var dialog_ended: bool = false
+var message: String
 var speed: float
+var buttons: Array
+var init: Callable
 
 func kill_dialog() -> void:
-	player.set_physics_process(true)
 	queue_free()
 
 func _ready() -> void:
-	player.sprite_animation(player.sprite_direction, "idle")
-	player.set_physics_process(false)
-	label.text = message
-	button_0.text = btn_0_msg
-	button_1.text = btn_1_msg
+	init.call()
 	animation_player.play("panel_display")
+	label.text = message
+	for button in buttons:
+		dialog_buttons[buttons.find(button)].text = button.message
 
 func _process(_delta: float) -> void:
 	if Input.is_anything_pressed() and animation_player.current_animation == "dialog_message":
@@ -35,20 +29,19 @@ func _process(_delta: float) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "panel_display":
 		animation_player.play("dialog_message")
-		#speed = SPEED/label.get_line_count()
 		animation_player.speed_scale = speed
 	elif anim_name == "dialog_message":
 		dialog_ended = true
-		if btn_1_msg == "":
-			button_0.position.x = 393.098
-			button_1.visible = false
+		if buttons.size() < 2:
+			dialog_buttons[0].position.x = 393.098
+			dialog_buttons[1].visible = false
 		else:
-			button_0.position.x = 50.0
-			button_1.visible = true
-		button_0.grab_focus()
-
+			dialog_buttons[0].position.x = 50.0
+			dialog_buttons[1].visible = true
+		dialog_buttons[0].grab_focus()
+#
 func _on_button_0_pressed() -> void:
-	kill_dialog()
+	buttons[0].function.call()
 
 func _on_button_1_pressed() -> void:
-	btn_1_func.call()
+	buttons[1].function.call()
