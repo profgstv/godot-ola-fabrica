@@ -2,14 +2,17 @@ extends Node
 
 const DIALOG_MESSAGE: PackedScene = preload("res://scenes/templates/dialog_message.tscn")
 
-var dialog
-
-var dialog_button_0 = DialogButton.new()
-var dialog_button_1 = DialogButton.new()
+var dialog: CanvasLayer
 
 class DialogButton:
 	var message: String
 	var function: Callable
+	
+	func _init(button_label: String, button_func: Callable):
+		message = button_label
+		function = button_func
+		pass
+	pass
 
 func instance_dialog(root_node: Node2D, message: String, speed: float, init: Callable, buttons: Array[DialogButton]) -> void:
 	dialog = DIALOG_MESSAGE.instantiate()
