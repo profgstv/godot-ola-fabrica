@@ -8,7 +8,7 @@ var dialog_ended: bool = false
 var message: String
 var speed: float
 var buttons: Array
-var init: Callable = func(): pass
+var init: Callable
 
 func kill_dialog() -> void:
 	queue_free()
